@@ -32,9 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig', #Toevoegen
     'werken.apps.WerkenConfig',
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', # Autorisatie van gebruikers (standaard)
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -137,4 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 try:
      from .local_settings import *
 except ImportError:
-    pass 
+    pass
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/' 
